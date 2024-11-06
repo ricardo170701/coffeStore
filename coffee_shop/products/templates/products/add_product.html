@@ -1,6 +1,9 @@
-Aca aparecera el form
+{% extends "base.html" %} {% load tailwind_filters %} {% block content %}
+
+
 <form action="{% url "add_product" %}" method="post">
     {% csrf_token %}
-  {{form.as_p}}
+  {{form | crispy}}
   <button type="submit">Agregar</button>
 </form>
+{% endblock content %}

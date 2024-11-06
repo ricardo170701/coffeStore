@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+<div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Detalles de la Orden</h2>
+  <div class="mb-2">
+    <span class="text-lg font-semibold">Usuario: </span>
+    <span class="text-lg">{{ order.user.username|title }}</span>
+  </div>
+  <div class="mb-2">
+    <span class="text-lg font-semibold">Fecha de la Orden: </span>
+    <span class="text-lg">{{ order.order_date|date }}</span>
+  </div>
+
+  <div class="mt-6">
+    <h3 class="text-xl font-bold mb-2">Artículos en tu orden:</h3>
+    <div class="flex justify-between items-center py-2 border-b">
+      <div class="text-lg font-bold">Cantidad</div>
+      <div class="text-lg font-bold">Nombre</div>
+      <div class="text-lg font-bold">Precio</div>
+      <div class="text-lg font-bold">Total</div>
+    </div>
+    {% for product_order in order_products %}
+    <div class="flex justify-between items-center py-2 border-b">
+      <div class="text-lg">{{ product_order.quantity }}</div>
+      <div class="text-lg">{{ product_order.product.name }}</div>
+      <div class="text-lg font-semibold">{{ product_order.product.price }}</div>
+      <div class="text-lg font-semibold">
+        {{ product_order.total|floatformat:2 }}
+      </div>
+    </div>
+    {% endfor %}
+    <div class="flex justify-between items-center py-2 border-b">
+      <div class="text-lg">Subtotal:</div>
+      <div class="text-lg font-semibold">{{ total_price|floatformat:2 }}</div>
+    </div>
+    <div class="flex justify-between items-center py-2 border-b">
+      <div class="text-lg">Total con Impuesto:</div>
+      <div class="text-lg font-semibold">
+        {{ total_price_with_tax|floatformat:2 }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
