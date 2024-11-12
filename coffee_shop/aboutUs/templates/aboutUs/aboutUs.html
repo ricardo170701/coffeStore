@@ -1,0 +1,320 @@
+{% extends "base.html" %} {% block content %}
+<section class="bg-gray-50 justify-center">
+  <div class="mx-auto max-w-screen-xl px-4 pt-32 pb-16 lg:flex lg:items-center">
+    <div class="mx-auto max-w-xl text-center">
+      <h1 class="text-3xl font-extrabold sm:text-5xl">
+        Sense coffee
+        <strong class="font-extrabold text-red-700 sm:block">
+          Cafe que te hace sentir
+        </strong>
+      </h1>
+    </div>
+  </div>
+  <hr />
+  <hr />
+  <div class="pt-8 mx-auto max-w-xl text-center">
+    <h1 class="text-3xl font-extrabold sm:text-5xl">
+      Bienvenidos a  <strong class="font-extrabold text-red-700 sm:block">
+        Sense Coffee
+      </strong> 
+    </h1>
+  </div>
+  <section>
+    <div
+      class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+    >
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        <div
+          class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+
+        <div class="lg:py-24">
+          <p class="mt-4 text-gray-800">
+            En Sense Coffee, nos dedicamos a crear experiencias inigualables
+            para los amantes del café. Nuestra pasión por el café va más allá de
+            una simple bebida; es un arte que cultivamos con dedicación y
+            excelencia. Situados en el corazón de esta comunidad vibrante, nos
+            enorgullece ser un lugar donde la calidad y el ambiente se
+            encuentran para ofrecer momentos memorables.
+          </p>
+         
+          <p class="mt-4 text-gray-800">
+            Sense Coffee nació de la pasión compartida de un grupo de amigos por 
+            el buen café. Inspirados por la tradición y las innovaciones en la 
+            cultura del café, decidimos crear un lugar donde cada persona pudiera
+             disfrutar de una taza perfecta. A través de los años, hemos crecido 
+             y evolucionado, pero nuestra dedicación a la calidad y al servicio 
+             sigue siendo la misma.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section>
+    <div
+      class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+    >
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        
+        <div
+          class="relative h-64 overflow-hidden rounded-lg sm:h-80  lg:h-full"
+        >
+          <img
+            alt=""
+            src="/media/ingredientes.png"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+
+        <div class="lg:py-24">
+            <h2 class="text-3xl font-bold sm:text-4xl">Ingredientes de Calidad</h2>
+          <p class="mt-4 text-gray-800">
+            Solo utilizamos los mejores ingredientes en todas nuestras preparaciones. 
+            Seleccionamos granos de café provenientes de las mejores regiones cafetaleras
+             del mundo, garantizando frescura y sabor en cada entrega. Creemos que un 
+             buen café debe ser una combinación perfecta de técnica y materia prima excepcional.
+          </p>
+
+          <a
+            href="{% url "list_product" %}"
+            class="mt-8 inline-block rounded bg-yellow-900 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+          >
+            mira nuestros productos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+  <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+<script type="module">
+  import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+
+  const keenSlider = new KeenSlider(
+    '#keen-slider',
+    {
+      loop: true,
+      slides: {
+        origin: 'center',
+        perView: 1.25,
+        spacing: 16,
+      },
+      breakpoints: {
+        '(min-width: 1024px)': {
+          slides: {
+            origin: 'auto',
+            perView: 2.5,
+            spacing: 32,
+          },
+        },
+      },
+    },
+    []
+  )
+
+  const keenSliderPrevious = document.getElementById('keen-slider-previous')
+  const keenSliderNext = document.getElementById('keen-slider-next')
+
+  keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
+  keenSliderNext.addEventListener('click', () => keenSlider.next())
+</script>
+
+<section class="bg-gray-50">
+  <div class="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
+    <div class="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
+      <h2 class="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+       Nuestros colaboradores
+      </h2>
+
+      <div class="mt-8 flex gap-4 lg:mt-0">
+        <button
+          aria-label="Previous slide"
+          id="keen-slider-previous"
+          class="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 rtl:rotate-180"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+
+        <button
+          aria-label="Next slide"
+          id="keen-slider-next"
+          class="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+        >
+          <svg
+            class="size-5 rtl:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 5l7 7-7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="-mx-6 mt-8 lg:col-span-2 lg:mx-0">
+      <div id="keen-slider" class="keen-slider">
+        <div class="keen-slider__slide">
+
+            <article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+                <img
+                alt=""
+                src="/media/fox_hacking.png"
+                class="h-56 lg:h-80  w-full object-cover"
+                />
+            
+                <div class="p-4 sm:p-6">
+                <a >
+                    <h3 class="text-lg font-medium text-gray-900">
+                    Angel foxy anton
+                    </h3>
+                </a>
+            
+                <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                  Reconocido como el mejor desarrollador móvil de la empresa, 
+                  sus aplicaciones no solo funcionan a la perfección, sino que también 
+                  encantan a los usuarios con su diseño intuitivo y atractivo. 🦊💻
+                </p>
+            
+               
+                </div>
+            </article>
+        </div>
+
+        <div class="keen-slider__slide">
+            <article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+                <img
+                alt=""
+                src="/media/dragon_hacking.png"
+                class="h-56 lg:h-80  w-full object-cover"
+                />
+            
+                <div class="p-4 sm:p-6">
+                <a >
+                    <h3 class="text-lg font-medium text-gray-900">
+                    David Dragon Wong
+                    </h3>
+                </a>
+            
+                <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                  Es un maestro en automatizaciones, destacándose por su habilidad 
+                  para optimizar procesos y mejorar la eficiencia. Su talento en la 
+                  programación de sistemas automatizados es insuperable.🐉💻
+                </p>
+            
+                
+                </div>
+            </article>
+        </div>
+
+        <div class="keen-slider__slide">
+            <article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+                <img
+                alt=""
+                       src="/media/tucan_hacking.png"
+                class="h-56 lg:h-80 w-full object-cover"
+                />
+            
+                <div class="p-4 sm:p-6">
+                <a >
+                    <h3 class="text-lg font-medium text-gray-900">
+                    Ricardo Tucan Mardelli
+                    </h3>
+                </a>
+            
+                <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                  Es un experto en ingeniería de datos y desarrollo Django, manejando 
+                  grandes volúmenes de datos con habilidad inigualable. 
+                  convirtiéndolo en el pilar fundamental para proyectos complejos 
+                  y desafiantes. 🦜💻
+                </p>
+            
+               
+                </div>
+            </article>
+        </div>
+        <div class="keen-slider__slide">
+          <article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+              <img
+              alt=""
+                     src="/media/lagarto_hacking.png"
+              class="h-56 lg:h-80 w-full object-cover"
+              />
+          
+              <div class="p-4 sm:p-6">
+              <a >
+                  <h3 class="text-lg font-medium text-gray-900">
+                  Daniel Lagartija Rodriguez
+                  </h3>
+              </a>
+          
+              <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                Es el nuevo talento del equipo, destacando por su habilidad 
+                en programación y su rápida capacidad de aprendizaje. 
+                Su adaptabilidad y entusiasmo son una gran adición a nuestro grupo. 🦎💻
+              </p>
+          
+             
+              </div>
+          </article>
+        </div>
+        <div class="keen-slider__slide">
+          <article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+              <img
+              alt=""
+                     src="/media/capibara_hacking.png"
+              class="h-56 lg:h-80 w-full object-cover"
+              />
+          
+              <div class="p-4 sm:p-6">
+              <a >
+                  <h3 class="text-lg font-medium text-gray-900">
+                  Vicente Capibara Perez
+                  </h3>
+              </a>
+          
+              <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                Es estoico y metódico, destacándose por su gran habilidad 
+                en programación. Su enfoque calmado y sistemático convierte 
+                cada desafío en una tarea bien gestionada y resuelta con precisión. 🦫💻
+              </p>
+          
+             
+              </div>
+          </article>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+{% endblock content %}
